@@ -1,7 +1,7 @@
 $(function(){
   $(".error-pass, .error-email").hide();
-  $(".overlay").hide();
-  $(".confirmation").hide();
+//$(".overlay").hide();
+//$(".confirmation").hide();
 })
 
 function checkEmail(email) {
@@ -35,8 +35,8 @@ function validateForm() {
   }, 2000)
 
   if(countErrors === 0) {
-    $(".overlay").show();
-    $(".confirmation").show();
+
+//  $(".confirmation").show();
   }
 }
 

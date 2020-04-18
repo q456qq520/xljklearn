@@ -1,6 +1,8 @@
 package com.xljk.learn.entity;
 
-public class MUser {
+import java.io.Serializable;
+
+public class MUser implements Serializable {
     private Integer userId;
 
     private String userAccount;
@@ -69,5 +71,18 @@ public class MUser {
 
     public void setUserHeadpath(String userHeadpath) {
         this.userHeadpath = userHeadpath == null ? null : userHeadpath.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "MUser{" +
+                "userId=" + userId +
+                ", userAccount='" + userAccount + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                ", userName='" + userName + '\'' +
+                ", userPhone='" + userPhone + '\'' +
+                ", userEmail='" + userEmail + '\'' +
+                ", userHeadpath='" + userHeadpath + '\'' +
+                '}';
     }
 }
