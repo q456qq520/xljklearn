@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+   <link rel="stylesheet" type="text/css" href="../common/css/article.css" />
+	
+	<link rel="stylesheet" type="text/css" href="common/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="common/zui/css/zui.css" />
+	<script type="text/javascript" src="../common/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="common/zui/js/zui.min.js"></script>
+	<script type="text/javascript" src="common/bootstrap/js/bootstrap.min.js"></script>
+<title>文章详情界面</title>
+</head> 
+	<style type="text/css">
+		#head {
+		   width: 100%;
+	       position: fixed;
+			height: 55px;
+			/*background-color: pink !important;*/
+			margin: 0;
+			padding: 0;
+			margin: auto;
+			z-index: 999;
+		}
+		//转发
+		.handle-other{
+		overflow: hidden;
+		}
+		.handle-other .WB_row_line {
+		    border-top-width: 1px;
+		    border-top-style: solid;
+		    }
+		    .WB_row_r3 li {
+		    width: 33.3%;
+		}
+		.WB_row_line li {
+		    float: left;
+		    height: 38px;
+		    text-align: center;
+           list-style: none;
+		}
+		.WB_feed_repeat {
+		    border-bottom-left-radius: 2px;
+		    border-bottom-right-radius: 2px;
+		    background-color: #f2f2f5;
+		}
+		.WB_feed_repeat .WB_repeat {
+
+			    margin: -1px 0 0;
+			    padding: 16px 0 6px;
+			    border-top-width: 1px;
+			    border-top-style: solid;
+			}
+			.WB_feed_repeat .WB_publish {
+		    margin: 0 0 0 50px;
+		    }
+		    .WB_publish .p_input {
+			    margin: 0 0 10px;
+			}
+			.WB_publish .p_opt .btn .W_btn_a{
+			vertical-align:top;
+			}
+			.W_btn_a_disable, .W_btn_a_disable:hover{
+			background:#ffc09f;
+			color:#fff;
+			cursor:default;
+			}
+			.WB_feed_repeat .repeat_list {
+			    padding: 0 20px;
+			    overflow: hidden;
+			}
+			 .tab li {
+		    float: left;
+		    margin: 0 0 0 -1px;
+		   }
+		   .tab .line {
+		    display: block;
+		    margin: 5px 0;
+		    padding: 0 10px;
+		    border-left-width: 1px;
+		    border-left-style: solid;
+		    line-height: 10px;
+		}
+		</style>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		
+		})
+	</script>
+	<body class="B_artical">
+   
+		<!-- 内容主题 -->
+	<div id="articleRoot" class="WB_miniblog">
+			<div class="WB_miniblog_fb">
+				<div id="plc_top">
+					<div class="WB_global_nav">
+						<div id="weibo_top_public">
+							<!--简易顶部导航拼页面用-->
+							<!--<div id="head">
+								<iframe src="/hotClassify/top"  style="width: 100%; border: none; height: 55px;"></iframe>
+							</div>-->
+
+							<!--简易顶部导航拼页面用-->
+						</div>
+					</div>
+				</div>
+				<!--内容-->
+				<div class="plc_frame" class="WB_main clearfix">
+					<div class="WB_frame">
+						<div id="plc_main">
+							<div class="WB_frame_a">
+								<div class="WB_cardwrap S_bg2">
+									<div class="WB_artical">
+										<!-- //编辑后再触发审核 -->
+										<div class="main_toppic">
+											<div class="picbox">
+												<img node-type="articleHeaderPic" src="../common/img/detail/head.jpg" >
+											</div>
+										</div>
+										<div class="main_editor">
+											<div class="title" node-type="articleTitle">这一篇关于心里健康学习的</div>
+											<div class="authorinfo clearfix S_txt2">
+												<div class="W_fl">
+													<span class="author1 W_autocut"><img src="../common/images/11.jpg" class="W_face_radius">
+													<a href="#" class="S_txt1" target="_blank"><em class="W_autocut">作者名字</em>
+                                                        <i title="微博个人认证 " class="W_icon icon_approve"></i>
+                                                    </a></span>
+													<em class="W_vline S_line1"></em>
+
+													<span class="time">时间</span>
+
+													<em class="W_vline S_line1"></em>
+													<span class="del"><a href="javascript:void(0);">投诉</a></span>
+
+												</div>
+												<div class="W_fr"><span class="num">阅读数：241212</span></div>
+											</div>
+											<div class="WB_editor_iframe_new" node-type="contentBody" style="opacity: 1;">
+												<p><b>​​啊实打实打算</b></p>
+												<p>啊大苏打实打实大苏打实打实打算 阿三顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶撒顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶阿三顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶</p>
+												
+											</div>
+											<!--关注-->
+											<div class="artical_add_box S_bg2" node-type="addBox">
+												
+												
+											</div>
+											<!--因为推荐阅读影响打赏放在作者模块下方-->
+											
+										</div>
+										<!--空-->
+										<div node-type="thirdModule"> </div>
+										<!--相关推荐-->
+										<div node-type="recommend" style="width: 700px;">
+											<!--data start-->
+											<div class="otherlist S_line1" node-type="recommend_wrap">
+												<div class="title clearfix">
+													<div class="W_fl W_f16">在线试题检测</div>
+													<div class="W_fr W_f14" node-type="recommend_all"></div>
+												</div>
+												<div class="PCD_pictext_i PCD_pictext_i_v2">
+													<div class="WB_innerwrap">
+														<div class="m_wrap">
+															<ul class="pt_ul clearfix">
+																<!--第二li-->
+																<li class="pt_li pt_li_1 S_bg2">
+																	<div class="pic_txt clearfix">
+																		<div class="info_box">
+																			<div class="info_box_inner">
+																				<div class="text_box">
+																					<div class="title W_autocut">
+																						<p>1、你更喜欢哪项运动?</p>
+																					</div>
+																					<div class="text text_cut S_txt2 select_answer" style="font-size:16px;">
+																						<span >A.没有</span><span >B.篮球</span><span >C.足球</span><span >D.羽毛球</span>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</li>
+																<li class="pt_li pt_li_1 S_bg2">
+																	<div class="pic_txt clearfix">
+																		<div class="info_box">
+																			<div class="info_box_inner">
+																				<div class="text_box">
+																					<div class="title W_autocut">
+																						<p>1、你更喜欢哪项运动?</p>
+																					</div>
+																					<div class="text text_cut S_txt2 select_answer" style="font-size:16px;">
+																						<span >A.没有</span><span >B.篮球</span><span >C.足球</span><span >D.羽毛球</span>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</li>
+															</ul>
+															<div>
+																<p>你的总分是：100分</p>
+																<p>恭喜你通过了测试，去试试其他题目吧</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<!--data start-->
+											</div>
+											<!--结-->
+										</div>
+										<!--转发-评论-点赞-->
+                                        	<div class="handle-other" style="width: 700px; height: 40px; border-top:4px solid #f2f2f5;padding-top: 10px;">
+                                        		<center style="font-size: 18px;">留言板</center>
+                                        		<div></div>
+                                        	</div>
+										<!--转发-评论-点赞-->
+										<div >
+											<div class="article_message">
+												<img src="../common/images/9.jpg"/>
+												<div class="comment-content">
+					                            <p class="comment-text"><span class="user">一个用户：</span>写的太好了。的撒手锏肯定会bask降低功耗把数据库对噶是</p>
+					                            <p class="comment-time">
+					                                2014-02-19 14:36
+					                            </p>
+                      							</div>
+											</div>
+											<div class="article_message">
+												<img src="../common/images/9.jpg"/>
+												<div class="comment-content">
+					                            <p class="comment-text"><span class="user">一个用户：</span>写的太好了。的撒手锏肯定会bask降低功耗把数据库对噶是</p>
+					                            <p class="comment-time">
+					                                2014-02-19 14:36
+					                            </p>
+                      							</div>
+											</div>
+											<div class="article_message">
+												<img src="../common/images/9.jpg"/>
+												<div class="comment-content">
+					                            <p class="comment-text"><span class="user">一个用户：</span>写的太好了。的撒手锏肯定会bask降低功耗把数据库对噶是</p>
+					                            <p class="comment-time">
+					                                2014-02-19 14:36
+					                            </p>
+                      							</div>
+											</div>
+											<div class="message_text">
+												<textarea class="message_comment"></textarea>
+												<button class="btn btn-off">留言</button>
+											</div>
+										</div>
+											
+										
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+	</body>
+
+</html>
