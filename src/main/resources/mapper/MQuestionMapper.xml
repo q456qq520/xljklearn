@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xljk.learn.dao.MQuestionMapper" >
+  <resultMap id="BaseResultMap" type="com.xljk.learn.entity.MQuestion" >
+    <id column="question_id" property="questionId" jdbcType="INTEGER" />
+    <result column="article_id" property="articleId" jdbcType="INTEGER" />
+    <result column="question_key" property="questionKey" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.xljk.learn.entity.MQuestionWithBLOBs" extends="BaseResultMap" >
+    <result column="question_title" property="questionTitle" jdbcType="LONGVARCHAR" />
+    <result column="question_A" property="questionA" jdbcType="LONGVARCHAR" />
+    <result column="question_B" property="questionB" jdbcType="LONGVARCHAR" />
+    <result column="question_C" property="questionC" jdbcType="LONGVARCHAR" />
+    <result column="question_D" property="questionD" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    question_id, article_id, question_key
+  </sql>
+  <sql id="Blob_Column_List" >
+    question_title, question_A, question_B, question_C, question_D
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from m_question
+    where question_id = #{questionId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from m_question
+    where question_id = #{questionId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xljk.learn.entity.MQuestionWithBLOBs" >
+    insert into m_question (question_id, article_id, question_key, 
+      question_title, question_A, question_B, 
+      question_C, question_D)
+    values (#{questionId,jdbcType=INTEGER}, #{articleId,jdbcType=INTEGER}, #{questionKey,jdbcType=VARCHAR}, 
+      #{questionTitle,jdbcType=LONGVARCHAR}, #{questionA,jdbcType=LONGVARCHAR}, #{questionB,jdbcType=LONGVARCHAR}, 
+      #{questionC,jdbcType=LONGVARCHAR}, #{questionD,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xljk.learn.entity.MQuestionWithBLOBs" >
+    insert into m_question
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="questionId != null" >
+        question_id,
+      </if>
+      <if test="articleId != null" >
+        article_id,
+      </if>
+      <if test="questionKey != null" >
+        question_key,
+      </if>
+      <if test="questionTitle != null" >
+        question_title,
+      </if>
+      <if test="questionA != null" >
+        question_A,
+      </if>
+      <if test="questionB != null" >
+        question_B,
+      </if>
+      <if test="questionC != null" >
+        question_C,
+      </if>
+      <if test="questionD != null" >
+        question_D,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="questionId != null" >
+        #{questionId,jdbcType=INTEGER},
+      </if>
+      <if test="articleId != null" >
+        #{articleId,jdbcType=INTEGER},
+      </if>
+      <if test="questionKey != null" >
+        #{questionKey,jdbcType=VARCHAR},
+      </if>
+      <if test="questionTitle != null" >
+        #{questionTitle,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="questionA != null" >
+        #{questionA,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="questionB != null" >
+        #{questionB,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="questionC != null" >
+        #{questionC,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="questionD != null" >
+        #{questionD,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xljk.learn.entity.MQuestionWithBLOBs" >
+    update m_question
+    <set >
+      <if test="articleId != null" >
+        article_id = #{articleId,jdbcType=INTEGER},
+      </if>
+      <if test="questionKey != null" >
+        question_key = #{questionKey,jdbcType=VARCHAR},
+      </if>
+      <if test="questionTitle != null" >
+        question_title = #{questionTitle,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="questionA != null" >
+        question_A = #{questionA,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="questionB != null" >
+        question_B = #{questionB,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="questionC != null" >
+        question_C = #{questionC,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="questionD != null" >
+        question_D = #{questionD,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where question_id = #{questionId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.xljk.learn.entity.MQuestionWithBLOBs" >
+    update m_question
+    set article_id = #{articleId,jdbcType=INTEGER},
+      question_key = #{questionKey,jdbcType=VARCHAR},
+      question_title = #{questionTitle,jdbcType=LONGVARCHAR},
+      question_A = #{questionA,jdbcType=LONGVARCHAR},
+      question_B = #{questionB,jdbcType=LONGVARCHAR},
+      question_C = #{questionC,jdbcType=LONGVARCHAR},
+      question_D = #{questionD,jdbcType=LONGVARCHAR}
+    where question_id = #{questionId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xljk.learn.entity.MQuestion" >
+    update m_question
+    set article_id = #{articleId,jdbcType=INTEGER},
+      question_key = #{questionKey,jdbcType=VARCHAR}
+    where question_id = #{questionId,jdbcType=INTEGER}
+  </update>
+</mapper>

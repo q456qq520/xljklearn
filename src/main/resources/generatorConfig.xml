@@ -11,7 +11,7 @@
 
 		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
 		<jdbcConnection 
-			connectionURL="jdbc:mysql://127.0.0.1:3306/hospitalSys"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/mhls"
 			driverClass="com.mysql.jdbc.Driver"
 			userId="root"
 			password="123" />
@@ -19,7 +19,7 @@
 		<!-- 配置生成相应的接口类，对应与Mapper.xml中的一系列CRUD方法SQL语句 -->
 		<!-- targetPackage:包名称(自定义)  targetProject：项目路径(自定义)   -->
 		<javaModelGenerator 
-			targetPackage="com.tzp.hckh.model"
+			targetPackage="com.xljk.learn.entity"
 			targetProject="src/main/java" >
 			<property name="enableSubPackages" value="true"/>
 			<property name="trimStrings" value="true"/>
@@ -35,7 +35,7 @@
 
 
 		<javaClientGenerator 
-			targetPackage="com.tzp.hckh.dao"
+			targetPackage="com.xljk.learn.dao"
 			targetProject="src/main/java" 
 			type="XMLMAPPER" >
 			<property name="enableSubPackages" value="true"/>
