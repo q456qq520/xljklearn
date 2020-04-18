@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<context id="context1">
+		<commentGenerator>
+			<property name="suppressDate" value="true"/>
+			<!-- 注释开关 -->
+			<property name="suppressAllComments" value="true"/>
+		</commentGenerator>
+
+
+		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+		<jdbcConnection 
+			connectionURL="jdbc:mysql://127.0.0.1:3306/hospitalSys"
+			driverClass="com.mysql.jdbc.Driver"
+			userId="root"
+			password="123" />
+
+		<!-- 配置生成相应的接口类，对应与Mapper.xml中的一系列CRUD方法SQL语句 -->
+		<!-- targetPackage:包名称(自定义)  targetProject：项目路径(自定义)   -->
+		<javaModelGenerator 
+			targetPackage="com.tzp.hckh.model"
+			targetProject="src/main/java" >
+			<property name="enableSubPackages" value="true"/>
+			<property name="trimStrings" value="true"/>
+		</javaModelGenerator>
+
+		<!-- 配置生成相应的实体Mapper.xml，对于Mapper3.X我们需要把type="XMLMAPPER" -->
+		<!-- targetPackage:包名称(自定义)  targetProject：项目路径(自定义)   -->
+		<sqlMapGenerator 
+			targetPackage="mapper"
+			targetProject="src/main/resources" >
+			<property name="enableSubPackages" value="true"/>
+		</sqlMapGenerator>
+
+
+		<javaClientGenerator 
+			targetPackage="com.tzp.hckh.dao"
+			targetProject="src/main/java" 
+			type="XMLMAPPER" >
+			<property name="enableSubPackages" value="true"/>
+		</javaClientGenerator>
+
+		<!-- 下面添加需要自动生成MyBatis代码的表 -->
+		<!-- 
+		<table schema="" tableName="news" domainObjectName="News" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+		 -->
+		<table schema="" tableName="%" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+
+	</context>
+</generatorConfiguration>
