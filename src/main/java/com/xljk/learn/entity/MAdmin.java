@@ -1,6 +1,8 @@
 package com.xljk.learn.entity;
 
-public class MAdmin {
+import java.io.Serializable;
+
+public class MAdmin implements Serializable {
     private Integer adminId;
 
     private String adminAccount;

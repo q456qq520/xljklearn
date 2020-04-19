@@ -79,4 +79,9 @@
       admin_name = #{adminName,jdbcType=VARCHAR}
     where admin_id = #{adminId,jdbcType=INTEGER}
   </update>
+
+
+  <select id="getAdminByname" resultMap="BaseResultMap" >
+    select <include refid="Base_Column_List" /> from m_admin where admin_account = #{adminAccount}
+  </select>
 </mapper>
