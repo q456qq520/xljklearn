@@ -4,6 +4,8 @@ import com.xljk.learn.entity.MArticle;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Mapper
 @Component(value = "mArticleMapper")
 public interface MArticleMapper {
@@ -20,4 +22,22 @@ public interface MArticleMapper {
     int updateByPrimaryKeyWithBLOBs(MArticle record);
 
     int updateByPrimaryKey(MArticle record);
+
+    /**
+     * 查询老师类问题
+     * @return
+     */
+    List<MArticle> selectTeacherAri();
+
+    /**
+     * 查询学生类问题
+     * @return
+     */
+    List<MArticle> selectStudentAri();
+
+    /**
+     * 查询家长类问题
+     * @return
+     */
+    List<MArticle> selectParentAri();
 }

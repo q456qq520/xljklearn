@@ -25,6 +25,35 @@
     from m_article
     where article_id = #{articleId,jdbcType=INTEGER}
   </select>
+
+  <select id="selectTeacherAri" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from m_article
+    where article_type =1
+  </select>
+
+
+  <select id="selectStudentAri" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from m_article
+    where article_type =2
+  </select>
+
+  <select id="selectParentAri" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from m_article
+    where article_type =3
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from m_article
     where article_id = #{articleId,jdbcType=INTEGER}
