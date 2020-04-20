@@ -1,7 +1,11 @@
 package com.xljk.learn.dao;
 
 import com.xljk.learn.entity.MArticle;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Component;
 
+@Mapper
+@Component(value = "mArticleMapper")
 public interface MArticleMapper {
     int deleteByPrimaryKey(Integer articleId);
 
