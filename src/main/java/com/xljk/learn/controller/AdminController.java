@@ -40,6 +40,10 @@ public class AdminController {
         return new ModelAndView("form-line");
     }
 
+    @RequestMapping(value = "/addjuan")
+    public ModelAndView addjuan(){
+        return new ModelAndView("addjuan");
+    }
 
     @RequestMapping(value = "/tologin",method = RequestMethod.POST)
     @ResponseBody
