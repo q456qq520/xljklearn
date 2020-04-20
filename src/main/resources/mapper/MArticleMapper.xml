@@ -54,6 +54,15 @@
     where article_type =3
   </select>
 
+  <select id="getAll" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from m_article
+    where 1=1
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from m_article
     where article_id = #{articleId,jdbcType=INTEGER}

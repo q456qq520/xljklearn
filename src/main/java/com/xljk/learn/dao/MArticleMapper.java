@@ -40,4 +40,10 @@ public interface MArticleMapper {
      * @return
      */
     List<MArticle> selectParentAri();
+
+    /**
+     * 获取全部文章
+     * @return
+     */
+    List<MArticle>  getAll();
 }

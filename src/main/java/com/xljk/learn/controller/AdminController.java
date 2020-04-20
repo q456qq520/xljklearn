@@ -1,7 +1,9 @@
 package com.xljk.learn.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.xljk.learn.entity.MAdmin;
 import com.xljk.learn.entity.MArticle;
+import com.xljk.learn.entity.MQuestion;
 import com.xljk.learn.entity.MUser;
 import com.xljk.learn.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 @Controller
 @RequestMapping("/admin")
@@ -92,4 +95,35 @@ public class AdminController {
         }
         return "false";
     }
+
+    /**
+     * 获取文章
+     * @return
+     */
+    @RequestMapping(value = "/getArticle")
+    @ResponseBody
+    public String getArticle(){
+        List<MArticle> mArticles = adminService.getAllArticle();
+        return JSON.toJSONString(mArticles);
+    }
+
+    /**
+     * 新增问题
+     * @param question
+     * @return
+     */
+    @RequestMapping(value = "/addQuestion")
+    @ResponseBody
+    public String addQuestion(MQuestion question, HttpServletRequest request){
+        String artileid = request.getParameter("artileid");
+        question.setArticleId(Integer.parseInt(artileid));
+        String rightKey = request.getParameter("rightKey");
+        question.setQuestionKey(rightKey);
+        boolean bool = adminService.addQuestion(question);
+        if(bool){
+            return "true";
+        }
+        return "false";
+    }
+
 }

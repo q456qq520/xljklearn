@@ -1,20 +1,21 @@
 package com.xljk.learn.dao;
 
 import com.xljk.learn.entity.MQuestion;
-import com.xljk.learn.entity.MQuestionWithBLOBs;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Component;
 
+@Mapper
+@Component(value = "mQuestionMapper")
 public interface MQuestionMapper {
     int deleteByPrimaryKey(Integer questionId);
 
-    int insert(MQuestionWithBLOBs record);
+    int insert(MQuestion record);
 
-    int insertSelective(MQuestionWithBLOBs record);
+    int insertSelective(MQuestion record);
 
-    MQuestionWithBLOBs selectByPrimaryKey(Integer questionId);
+    MQuestion selectByPrimaryKey(Integer questionId);
 
-    int updateByPrimaryKeySelective(MQuestionWithBLOBs record);
-
-    int updateByPrimaryKeyWithBLOBs(MQuestionWithBLOBs record);
+    int updateByPrimaryKeySelective(MQuestion record);
 
     int updateByPrimaryKey(MQuestion record);
 }
