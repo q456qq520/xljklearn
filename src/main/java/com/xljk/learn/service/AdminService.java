@@ -76,13 +76,14 @@ public class AdminService {
         if (mQuestion.getQuestionA()==null || mQuestion.getQuestionA()==""){
             mQuestion.setQuestionA("首先排除A");
         }
-        else if (mQuestion.getQuestionB()==null || mQuestion.getQuestionB()==""){
+
+        if (mQuestion.getQuestionB()==null || mQuestion.getQuestionB()==""){
             mQuestion.setQuestionB("首先排除B");
         }
-        else if (mQuestion.getQuestionC()==null || mQuestion.getQuestionC()==""){
+        if (mQuestion.getQuestionC()==null || mQuestion.getQuestionC()==""){
             mQuestion.setQuestionC("首先排除C");
         }
-        else if (mQuestion.getQuestionD()==null || mQuestion.getQuestionD()==""){
+        if (mQuestion.getQuestionD()==null || mQuestion.getQuestionD()==""){
             mQuestion.setQuestionD("首先排除D");
         }
         mQuestionMapper.insertSelective(mQuestion);

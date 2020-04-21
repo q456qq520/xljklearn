@@ -1,6 +1,8 @@
 package com.xljk.learn.entity;
 
-public class MArticle {
+import java.io.Serializable;
+
+public class MArticle implements Serializable {
     private Integer articleId;
 
     private String articleTitle;

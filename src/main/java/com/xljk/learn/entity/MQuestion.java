@@ -1,6 +1,8 @@
 package com.xljk.learn.entity;
 
-public class MQuestion {
+import java.io.Serializable;
+
+public class MQuestion implements Serializable {
     private Integer questionId;
 
     private Integer articleId;
