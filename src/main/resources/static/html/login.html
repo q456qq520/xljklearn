@@ -17,11 +17,13 @@
  			$(".userImage").hide();
  			$(".login_div").hide();
  			$(".register_div").show();
+			$(".error-pass").css("display","none");
  		})
  			$("#gotoLogin_input").click(function(){
  			$(".userImage").show();
  			$(".login_div").show();
  			$(".register_div").hide();
+				$(".error-pass").css("display","none");
  		})
  			
  			$(".resister_btn").on("click",function(){
@@ -38,6 +40,7 @@
 					confirm("注册成功，去登录吧")
 					window.location.href="/user/login"
 				}else{
+					$(".error-pass").attr("display","inline");
 					$(".errorregist").text("用户名已存在")
 				}
 			},
@@ -64,6 +67,7 @@ $(".login_input").on("click",function(){
 				if(json=="true"){
 						window.location.href="/index/index"
 				}else{
+					$(".error-pass").css("display","inline");
 					$(".pass-msg").text("用户名或者密码错误")
 				}
 					
