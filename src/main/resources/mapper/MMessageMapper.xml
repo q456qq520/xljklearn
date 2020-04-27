@@ -24,7 +24,18 @@
     from m_message
     where message_id = #{messageId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    <select id="selectAllM" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer">
+      select
+      <include refid="Base_Column_List" />
+      ,
+      <include refid="Blob_Column_List" />
+      from m_message
+      where article_id = #{articleId,jdbcType=INTEGER}
+    </select>
+
+
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from m_message
     where message_id = #{messageId,jdbcType=INTEGER}
   </delete>

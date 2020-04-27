@@ -21,7 +21,15 @@
     from m_question
     where question_id = #{questionId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    <select id="selectAllByAid" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+      select
+      <include refid="Base_Column_List" />
+      from m_question
+      where article_id = #{articleId,jdbcType=INTEGER}
+    </select>
+
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from m_question
     where question_id = #{questionId,jdbcType=INTEGER}
   </delete>

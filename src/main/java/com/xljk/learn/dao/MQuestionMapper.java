@@ -4,6 +4,8 @@ import com.xljk.learn.entity.MQuestion;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Mapper
 @Component(value = "mQuestionMapper")
 public interface MQuestionMapper {
@@ -18,4 +20,7 @@ public interface MQuestionMapper {
     int updateByPrimaryKeySelective(MQuestion record);
 
     int updateByPrimaryKey(MQuestion record);
+
+
+    List<MQuestion> selectAllByAid(Integer articleId);
 }

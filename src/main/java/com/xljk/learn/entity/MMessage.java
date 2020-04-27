@@ -1,15 +1,23 @@
 package com.xljk.learn.entity;
 
+import java.lang.invoke.MutableCallSite;
+
 public class MMessage {
     private Integer messageId;
 
     private Integer userId;
+
+    private MUser user;
 
     private Integer articleId;
 
     private String messageDate;
 
     private String messageContent;
+
+    public MUser getUser() {return user; }
+
+    public void setUser(MUser user) {this.user = user; }
 
     public Integer getMessageId() {
         return messageId;
