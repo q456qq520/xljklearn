@@ -126,4 +126,16 @@ public class AdminController {
         return "false";
     }
 
+
+    /*进入查询文章页面*/
+    @RequestMapping(value = "/allarticle")
+    public ModelAndView allarticle(){
+        return new ModelAndView("articleTable");
+    }
+
+    /*进入查询用户页面*/
+    @RequestMapping(value = "/alluser")
+    public ModelAndView alluser(){
+        return new ModelAndView("userTable");
+    }
 }
