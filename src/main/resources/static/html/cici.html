@@ -56,7 +56,8 @@
 				success:function(json){
 					if(json == null){alert("出大事")}
 					$.each(json,function(i,obj){
-								$a=$("<div class='col-md-4 agile-services-grid'><img src='../common/images/"+i+".jpg' alt='' /><h6><a href='/index/detail?id="+obj.articleId+"' style='color: #000000; text-decoration: none;'>"+obj.articleTitle+"</a></h6><p>"+obj.articleContent.substring(0,30)+"</p></div>");
+                                 var src = "../"+obj.articlePath
+								$a=$("<div class='col-md-4 agile-services-grid'><img src='"+src+"' alt='' /><h6><a href='/index/detail?id="+obj.articleId+"' style='color: #000000; text-decoration: none;'>"+obj.articleTitle+"</a></h6><p>"+obj.articleContent.substring(0,30)+"</p></div>");
 								$(".agile-services-grids").append($a);
 							})
 				},
@@ -75,8 +76,9 @@
 					if(json == null){alert("出大事")}
 					var count = 5
 					$.each(json,function(i,obj){
+                         var src = "../"+obj.articlePath
 								count++;
-								$a=$("<div class='col-sm-4 w3-agile-post-grids'><div class='w3-agile-post-img'><a href='#' data-toggle='modal' data-target='#myModal' style='background: url(../common/images/"+count+".jpg) no-repeat 0px 0px;'></a></div> <div class='w3-agile-post-info'><h4><a href='/index/detail?id="+obj.articleId+"' data-toggle='modal' data-target='#myModal'>"+obj.articleTitle+"</a></h4><ul><li>By <a href='#'>Admin</a></li><li>Dec 03rd,2016</li></ul><p>"+obj.articleContent.substring(0,30)+"</p></div></div>");
+								$a=$("<div class='col-sm-4 w3-agile-post-grids'><div class='w3-agile-post-img'><a href='#' data-toggle='modal' data-target='#myModal' style='background: url("+src+") no-repeat 0px 0px;'></a></div> <div class='w3-agile-post-info'><h4><a href='/index/detail?id="+obj.articleId+"' data-toggle='modal' data-target='#myModal'>"+obj.articleTitle+"</a></h4><ul><li>By <a href='#'>Admin</a></li><li>Dec 03rd,2016</li></ul><p>"+obj.articleContent.substring(0,30)+"</p></div></div>");
 								$(".posts-grids").append($a);
 							})
 				},

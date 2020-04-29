@@ -74,13 +74,13 @@ public class AdminController {
         String type = request.getParameter("artiletype");
         if(type.equals("a")){
             //学生
-            mArticle.setArticleType(0);
+            mArticle.setArticleType(1);
         }else if(type.equals("b")){
             //老师
-            mArticle.setArticleType(1);
+            mArticle.setArticleType(2);
         }else {
             //家长
-            mArticle.setArticleType(2);
+            mArticle.setArticleType(3);
         }
 
         if(file.isEmpty()){

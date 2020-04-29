@@ -94,8 +94,11 @@
 	 			dataType:"json",
 				success:function(obj){
 					if(obj == null){alert("出大事")}
+						var src = "../"+obj.articlePath
+						$("#article_pic").attr("src",src)
 						$a=$("<div class='title' node-type='articleTitle'>"+obj.articleTitle+"</div><div class='authorinfo clearfix S_txt2'><div class='W_fl'><em class='W_vline S_line1'></em><span class='time'>"+obj.articleDate+"</span><em class='W_vline S_line1'></em><span class='del'><a href='javascript:void(0);'>投诉</a></span></div></div><div class='WB_editor_iframe_new' node-type='contentBody' style='opacity: 1;'><p></p><p>"+obj.articleContent+"</p></div>");
 						$(".main_editor").append($a);
+
 				},
 				error:function(){
 					console.log("服务器繁忙...")
@@ -195,7 +198,7 @@
 										<!-- //编辑后再触发审核 -->
 										<div class="main_toppic">
 											<div class="picbox">
-												<img node-type="articleHeaderPic" src="../common/img/detail/head.jpg" >
+												<img id="article_pic" node-type="articleHeaderPic" src="../common/img/detail/head.jpg" >
 											</div>
 										</div>
 										<div class="main_editor">

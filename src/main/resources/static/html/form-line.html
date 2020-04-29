@@ -255,7 +255,9 @@
                 success:function(json){
                     if(json=="true"){
                         alert("新增成功")
-                        $(".tpl-form-line-form").form("clear");
+                        $("#articleTitle").val("")
+                        $("#user-intro").val("")
+                        $(".am-form-field").val("")
                     }else{
                         alert("服务器繁忙...")
                     }

@@ -199,14 +199,14 @@
                                 <div class="am-form-group">
                                     <label  class="am-u-sm-3 am-form-label">回答C / Answer</label>
                                     <div class="am-u-sm-9">
-                                        <input type="text" name="questionC" value="" placeholder="回答C / Answerr">
+                                        <input type="text" id="huidac" name="questionC" value="" placeholder="回答C / Answerr">
                                     </div>
                                 </div>
 
                                 <div class="am-form-group">
                                     <label class="am-u-sm-3 am-form-label">回答D / Answer</label>
                                     <div class="am-u-sm-9">
-                                        <input type="text" value="" name="questionD" placeholder="回答D / Answerr">
+                                        <input type="text"id="huidad" value="" name="questionD" placeholder="回答D / Answerr">
                                     </div>
                                 </div>
 
@@ -277,6 +277,10 @@
                 success:function(json){
                     if(json=="true"){
                         alert("新增成功")
+                        $("#user-name").val("")
+                        $("#user-email").val("")
+                        $("#huidac").val("")
+                        $("#huidad").val("")
                     }else{
                         alert("服务器繁忙...")
                     }
