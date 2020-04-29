@@ -5,6 +5,8 @@ import com.xljk.learn.entity.MUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
     @Autowired
@@ -30,5 +32,12 @@ public class UserService {
 
     public void userRegist(MUser mUser){
         mUserMapper.insertSelective(mUser);
+    }
+
+    public List<MUser> getAllU(){ return mUserMapper.selectAllUser();}
+
+    public int deleteU(int id) {
+        int result = mUserMapper.deleteByPrimaryKey(id);
+        return result;
     }
 }

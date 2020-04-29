@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Mapper
 @Component(value = "mUserMapper")
 public interface MUserMapper {
@@ -21,4 +23,7 @@ public interface MUserMapper {
     int updateByPrimaryKey(MUser record);
 
     MUser getUserbyUsername(@Param("userAccount")String userAccount);
+
+    List<MUser> selectAllUser();
+
 }

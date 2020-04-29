@@ -6,6 +6,8 @@ import com.xljk.learn.entity.MArticle;
 import com.xljk.learn.entity.MQuestion;
 import com.xljk.learn.entity.MUser;
 import com.xljk.learn.service.AdminService;
+import com.xljk.learn.service.ArticleService;
+import com.xljk.learn.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,6 +29,10 @@ import java.util.List;
 public class AdminController {
     @Autowired
     private AdminService adminService;
+    @Autowired
+    private ArticleService articleService;
+    @Autowired
+    private UserService userService;
 
     @RequestMapping(value = "/login")
     public ModelAndView login(){
@@ -137,5 +143,36 @@ public class AdminController {
     @RequestMapping(value = "/alluser")
     public ModelAndView alluser(){
         return new ModelAndView("userTable");
+    }
+    /*文章管理*/
+    @RequestMapping(value = "/searchArticle")
+    @ResponseBody
+    public String searchArticle(){
+        List<MArticle> list = articleService.getAllA();
+        String json = JSON.toJSONString(list);
+        return json;
+    }
+    @RequestMapping(value = "/deleteArticle")
+    @ResponseBody
+    public String deleteArticle( String id){
+        int ids = Integer.parseInt(id);
+        int result = articleService.deleteAr(ids);
+        return "true";
+    }
+    /*用户管理*/
+    @RequestMapping(value = "/searchUser")
+    @ResponseBody
+    public String searchUser(){
+        List<MUser> list = userService.getAllU();
+        String json = JSON.toJSONString(list);
+        return json;
+    }
+    @RequestMapping(value = "/deleteUser")
+    @ResponseBody
+    public String deleteUser(String id){
+        int ids = Integer.parseInt(id);
+        int result = userService.deleteU(ids);
+        System.out.println(result);
+        return "true";
     }
 }

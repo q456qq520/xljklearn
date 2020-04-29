@@ -24,12 +24,17 @@ public class ArticleService {
     private MUserMapper mUserMapper;
     @Autowired
     private MQuestionMapper mQuestionMapper;
-
+    public int deleteAr(int id){
+        int result = mArticleMapper.deleteByPrimaryKey(id);
+        return result;
+    }
     public List<MArticle> getTeacherAri() { return mArticleMapper.selectTeacherAri();}
 
     public List<MArticle> getStudentAri() { return mArticleMapper.selectStudentAri();}
 
     public List<MArticle> getParentAri() { return mArticleMapper.selectParentAri();}
+
+    public List<MArticle> getAllA(){return mArticleMapper.getAll();}
 
     public MArticle getAriDetail(int id){ return mArticleMapper.selectByPrimaryKey(id);}
 
